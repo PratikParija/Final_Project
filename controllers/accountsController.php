@@ -75,6 +75,12 @@ class accountsController extends http\controller
 
     }
 
+    /*public static function update(){
+
+        $record = accounts::findOne($_REQUEST['id']);
+
+    }*/
+
      //this is to login, here is where you find the account and allow login or deny.
     public static function login()
     {
