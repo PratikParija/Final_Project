@@ -120,13 +120,22 @@ class routes
         $route->method = 'insert';
         $routes[] = $route;
 
-        //This is to edit the accounts
+        //This shows the edit account
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'edit';
+        $routes[] = $route;
+
+        //This will update the account
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'edit';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'store';
         $routes[] = $route;
 
         return $routes;
