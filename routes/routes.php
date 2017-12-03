@@ -111,12 +111,22 @@ class routes
         $route->method = 'delete';
         $routes[] = $route;
 
+        //This is to insert new record into accounts
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'insert';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'insert';
+        $routes[] = $route;
+
+        //This is to edit the accounts
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'edit';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'edit';
         $routes[] = $route;
 
         return $routes;
