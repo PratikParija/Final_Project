@@ -54,6 +54,16 @@ class accountsController extends http\controller
     //this is the function to save the user the user profile
     public static function store()
     {
+        $record = accounts::findOne($_REQUEST['id']);
+        $record->email = $_POST['email'];
+        $record->fname = $_POST['fname'];
+        $record->lname = $_POST['lname'];
+        $record->phone = $_POST['phone'];
+        $record->birthday = $_POST['birthday'];
+        $record->gender = $_POST['gender'];
+        $record->password = $_POST['password'];
+        $record->save();
+
         print_r($_POST);
 
     }
@@ -75,7 +85,8 @@ class accountsController extends http\controller
 
     }
 
-    /*public static function update(){
+    //This will update the account & contain update functionality
+    /*public static function store(){
 
         $record = accounts::findOne($_REQUEST['id']);
 
