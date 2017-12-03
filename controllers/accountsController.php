@@ -66,7 +66,14 @@ class accountsController extends http\controller
 
     }
 
-    //this is to login, here is where you find the account and allow login or deny.
+    public static function delete(){
+
+        $record = accounts::findOne($_REQUEST['id']);
+        $record->delete();
+
+    }
+
+     //this is to login, here is where you find the account and allow login or deny.
     public static function login()
     {
         //you will need to fix this so we can find users username.  YOu should add this method findUser to the accounts collection
