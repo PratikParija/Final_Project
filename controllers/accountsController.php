@@ -85,14 +85,14 @@ class accountsController extends http\controller
 
     }
 
-    //This will update the account & contain update functionality
-    /*public static function store(){
+    //This is to insert new account
+    /*public static function insert(){
 
-        $record = accounts::findOne($_REQUEST['id']);
+        $record = new accounts;
 
     }*/
-
-     //this is to login, here is where you find the account and allow login or deny.
+    
+    //this is to login, here is where you find the account and allow login or deny.
     public static function login()
     {
         //you will need to fix this so we can find users username.  YOu should add this method findUser to the accounts collection
