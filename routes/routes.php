@@ -103,6 +103,14 @@ class routes
         $route->method = 'delete';
         $routes[] = $route;
 
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'delete';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'delete';
+        $routes[] = $route;
+
         return $routes;
     }
 }
