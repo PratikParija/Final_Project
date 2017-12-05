@@ -17,13 +17,51 @@
 
 <body>
 
-<?php
-//this is how you print something  $data contains the record that was selected on the table.
+<?php  $array =  get_object_vars($data);  ?>
 
-print_r($data);
+<form action="index.php?page=accounts&action=edit" method="POST">
+
+    <div class="container">
+        <label><b>email</b></label>
+        <input type="text" name="email" value="<?php echo $array['email']?>" required>
+
+        <br>
+
+        <label><b>firstname</b></label>
+        <input type="text"  name="fname" value="<?php echo $array['fname']?>" required>
+
+        <br>
+
+        <label><b>lastname</b></label>
+        <input type="text" name="lname" value="<?php echo $array['lname']?>" required>
+
+        <br>
+
+        <label><b>phone</b></label>
+        <input type="text"  name="phone" value="<?php echo $array['phone']?>" required>
+
+        <br>
+
+        <label><b>birthday</b></label>
+        <input type="text"  name="birthday" value="<?php echo $array['birthday']?>" required>
+
+        <br>
+
+        <label><b>gender</b></label>
+        <input type="text"  name="gender" value="<?php echo $array['gender']?>" required>
+
+        <br>
+
+        <label><b>password</b></label>
+        <input type="text"  name="password" value="<?php echo $array['password']?>" required>
+
+        <button type="submit">Edit</button>
+    </div>
 
 
-?>
+
+</form>
+
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
