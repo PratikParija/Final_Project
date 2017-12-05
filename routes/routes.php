@@ -117,7 +117,7 @@ class routes
         $route->action = 'insert';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
-        $route->method = 'insert';
+        $route->method = 'store';
         $routes[] = $route;
 
         //This shows the edit account
@@ -132,10 +132,18 @@ class routes
         //This will update the account
         $route = new route();
         $route->http_method = 'POST';
-        $route->action = 'edit';
+        $route->action = 'store';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'store';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'register';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'register';
         $routes[] = $route;
 
         return $routes;

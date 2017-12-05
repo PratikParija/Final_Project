@@ -38,23 +38,17 @@ class accountsController extends http\controller
     {
         //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
         //USE THE ABOVE TO SEE HOW TO USE Bcrypt
-        print_r($_POST);
+
         //this just shows creating an account.
-        $record = new account();
-        $record->email = "kwilliam@njit.edu";
-        $record->fname = "test2";
-        $record->lname = "cccc2";
-        $record->phone = "4444444";
-        $record->birthday = "0";
-        $record->gender = "male";
-        $record->password = "12345";
-        $record->save();
+
+        self::getTemplate('register');
+
     }
 
     //this is the function to save the user the user profile
     public static function store()
     {
-        $record = accounts::findOne($_REQUEST['id']);
+        $record = new account();
         $record->email = $_POST['email'];
         $record->fname = $_POST['fname'];
         $record->lname = $_POST['lname'];
@@ -64,7 +58,9 @@ class accountsController extends http\controller
         $record->password = $_POST['password'];
         $record->save();
 
-        print_r($_POST);
+        header("Location: index.php?page=accounts&action=all");
+
+
 
     }
 

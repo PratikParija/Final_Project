@@ -44,6 +44,8 @@
 
 </form>
 
+//<h1><a href="index.php?page=accounts&action=register">Create New Account</a></h1>
+
 
 <script src="js/scripts.js"></script>
 </body>
