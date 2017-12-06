@@ -55,6 +55,8 @@
         <label><b>password</b></label>
         <input type="text"  name="password" value="<?php echo $array['password']?>" required>
 
+        <br>
+
         <button type="submit">Edit</button>
     </div>
 

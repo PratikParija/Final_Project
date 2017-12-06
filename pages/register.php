@@ -3,6 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
@@ -30,40 +34,55 @@
 <form action="index.php?page=accounts&action=store" method="POST">
 
     <div class="container">
-        <label><b>email</b></label>
-        <input type="text" placeholder="Enter email" name="email" required>
+        <h2>Register</h2>
 
-        <br>
+        <div class="form-group">
+            <label><b>email</b></label>
+            <input type="text" class="form-control" placeholder="Enter email" name="email" required>
+        </div>
 
-        <label><b>firstname</b></label>
-        <input type="text" placeholder="Enter firstname" name="fname" required>
+        <!-- <br> -->
 
-        <br>
+        <div class="form-group">
+            <label><b>firstname</b></label>
+            <input type="text" class="form-control" placeholder="Enter firstname" name="fname" required>
+        </div>
 
-        <label><b>lastname</b></label>
-        <input type="text" placeholder="Enter lastname" name="lname" required>
+        <!-- <br> -->
 
-        <br>
+        <div class="form-group">
+            <label><b>lastname</b></label>
+            <input type="text" class="form-control" placeholder="Enter lastname" name="lname" required>
+        </div>
 
-        <label><b>phone</b></label>
-        <input type="text" placeholder="Enter phone number" name="phone" required>
+        <!-- <br> -->
 
-        <br>
+        <div class="form-group">
+            <label><b>phone</b></label>
+            <input type="text" class="form-control" placeholder="Enter phone number" name="phone" required>
+        </div>
 
-        <label><b>birthday</b></label>
-        <input type="text" placeholder="Enter birthday" name="birthday" required>
+        <!-- <br> -->
 
-        <br>
+        <div class="form-group">
+            <label><b>birthday</b></label>
+            <input type="text" class="form-control" placeholder="Enter birthday" name="birthday" required>
+        </div>
 
-        <label><b>gender</b></label>
-        <input type="text" placeholder="Enter gender" name="gender" required>
+        <!-- <br> -->
 
-        <br>
+        <div class="form-group">
+            <label><b>gender</b></label>
+            <input type="text" class="form-control" placeholder="Enter gender" name="gender" required>
+        </div>
+        <!-- <br> -->
 
-        <label><b>password</b></label>
-        <input type="text" placeholder="Enter gender" name="password" required>
+        <div class="form-group">
+            <label><b>password</b></label>
+            <input type="text" class="form-control" placeholder="Enter password" name="password" required>
+        </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-default">Submit</button>
     </div>
 
 
