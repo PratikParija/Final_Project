@@ -129,6 +129,14 @@ class routes
         $route->method = 'edit';
         $routes[] = $route;
 
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'edit';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'edit';
+        $routes[] = $route;
+
         //This will update the account
         $route = new route();
         $route->http_method = 'POST';
@@ -139,11 +147,27 @@ class routes
         $routes[] = $route;
 
         $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'store';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'store';
+        $routes[] = $route;
+
+        $route = new route();
         $route->http_method = 'GET';
         $route->action = 'register';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'register';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'newTask';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'newTask';
         $routes[] = $route;
 
         return $routes;

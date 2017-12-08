@@ -12,6 +12,18 @@ class tasksController extends http\controller
 {
     //each method in the controller is named an action.
     //to call the show function the url is index.php?page=task&action=show
+
+    public static function newTask()
+    {
+        //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
+        //USE THE ABOVE TO SEE HOW TO USE Bcrypt
+
+        //this just shows creating an account.
+
+        self::getTemplate('newTask');
+
+    }
+
     public static function show()
     {
         $record = todos::findOne($_REQUEST['id']);
