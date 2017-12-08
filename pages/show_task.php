@@ -20,8 +20,49 @@
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
 
-print_r($data);
+$array =  get_object_vars($data);
 ?>
+
+<form action="index.php?page=tasks&action=edit" method="POST">
+
+    <div class="container">
+        <label><b>owneremail</b></label>
+        <input type="text" name="owneremail" value="<?php echo $array['owneremail']?>" required>
+
+        <br>
+
+        <label><b>ownerid</b></label>
+        <input type="text"  name="ownerid" value="<?php echo $array['ownerid']?>" required>
+
+        <br>
+
+        <label><b>createddate</b></label>
+        <input type="text" name="createddate" value="<?php echo $array['createddate']?>" required>
+
+        <br>
+
+        <label><b>duedate</b></label>
+        <input type="text"  name="duedate" value="<?php echo $array['duedate']?>" required>
+
+        <br>
+
+        <label><b>message</b></label>
+        <input type="text"  name="message" value="<?php echo $array['message']?>" required>
+
+        <br>
+
+        <label><b>isdone</b></label>
+        <input type="text"  name="isdone" value="<?php echo $array['isdone']?>" required>
+
+        <br>
+
+        <button type="submit">Edit</button>
+    </div>
+
+
+
+</form>
+
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
 </form>
