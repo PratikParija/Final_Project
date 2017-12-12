@@ -24,6 +24,11 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
 
 
 ?>
+<!--<form action="index.php?page=tasks&action=newTask" method="post" id="form1">
+    <button type="submit" form="form1" value="newTask">New Task</button>
+</form>-->
+
+<h1><a href="index.php?page=tasks&action=newTask">Create New Task</a></h1>
 
 
 <script src="js/scripts.js"></script>

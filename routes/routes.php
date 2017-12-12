@@ -95,6 +95,7 @@ class routes
 
         //YOU WILL NEED TO ADD MORE ROUTES
 
+        //delete method for tasks
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'delete';
@@ -103,6 +104,7 @@ class routes
         $route->method = 'delete';
         $routes[] = $route;
 
+        //delete method for accounts
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'delete';
@@ -129,6 +131,7 @@ class routes
         $route->method = 'edit';
         $routes[] = $route;
 
+        //This shows the edit for tasks
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
@@ -146,6 +149,7 @@ class routes
         $route->method = 'store';
         $routes[] = $route;
 
+        //This will update the tasks
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'store';
@@ -154,6 +158,7 @@ class routes
         $route->method = 'store';
         $routes[] = $route;
 
+        //This creates new account
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'register';
@@ -162,6 +167,7 @@ class routes
         $route->method = 'register';
         $routes[] = $route;
 
+        //This creates new tasks
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'newTask';
