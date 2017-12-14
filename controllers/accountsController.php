@@ -48,19 +48,29 @@ class accountsController extends http\controller
     //this is the function to save the user the user profile
     public static function store()
     {
-        $record = new account();
-        $record->email = $_POST['email'];
-        $record->fname = $_POST['fname'];
-        $record->lname = $_POST['lname'];
-        $record->phone = $_POST['phone'];
-        $record->birthday = $_POST['birthday'];
-        $record->gender = $_POST['gender'];
-        $record->password = $_POST['password'];
-        $record->save();
+        $user = accounts::findUserbyEmail($_REQUEST['email']);
 
-        header("Location: index.php?page=accounts&action=all");
+        if ($user == FALSE) {
+            $record = new account();
+            $record->email = $_POST['email'];
+            $record->fname = $_POST['fname'];
+            $record->lname = $_POST['lname'];
+            $record->phone = $_POST['phone'];
+            $record->birthday = $_POST['birthday'];
+            $record->gender = $_POST['gender'];
+            //this creates the password
+            //this is a mistake you can fix...
+            //Turn the set password function into a static method on a utility class.
+            $record->password = $user->setPassword($_POST['password']);
+            $record->save();
 
+            header("Location: index.php?page=tasks&action=all");
 
+        }else{
+            //echo = 'already registered';
+            $error = 'Already registered';
+            self::getTemplate('error', $error);
+        }
 
     }
 
@@ -98,7 +108,30 @@ class accountsController extends http\controller
         //after you login you can use the header function to forward the user to a page that displays their tasks.
         //        $record = accounts::findUser($_POST['uname']);
 
-        print_r($_POST);
+        $user = accounts::findUserbyEmail($_REQUEST['email']);
+
+        if ($user == FALSE){
+
+            echo = 'user not found';
+
+        }else{
+
+            if ($user->checkPassword($_POST['password'])==TRUE){
+
+                echo 'login';
+
+                session_start();
+                $_SESSION["userID"]= $user->id;
+
+                //forward the user to show all todos page
+                print_r($_SESSION);
+
+            }else{
+
+                echo 'password does not match';
+            }
+
+        }
 
     }
 
