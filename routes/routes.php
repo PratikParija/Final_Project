@@ -143,6 +143,15 @@ class routes
         //This will update the account
         $route = new route();
         $route->http_method = 'POST';
+        $route->action = 'save';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'save';
+        $routes[] = $route;
+
+        //This is for storing registration data
+        $route = new route();
+        $route->http_method = 'POST';
         $route->action = 'store';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
@@ -167,6 +176,14 @@ class routes
         $route->method = 'register';
         $routes[] = $route;
 
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'register';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'register';
+        $routes[] = $route;
+
         //This creates new tasks
         $route = new route();
         $route->http_method = 'GET';
@@ -177,6 +194,15 @@ class routes
         $routes[] = $route;
 
         return $routes;
+    }
+
+    public static function create($http_method,$action,$page,$controller,$method) {
+        $route = new route();
+        $route->http_method = $http_method;
+        $route->action = $action;
+        $route->page = $page;
+        $route->controller = $controller;
+        $route->method = $method;
     }
 }
 

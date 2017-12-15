@@ -82,6 +82,19 @@ class accountsController extends http\controller
 
     }
 
+    //this is used to save the update form data
+    public static function save() {
+        $user = accounts::findOne($_REQUEST['id']);
+        $user->email = $_POST['email'];
+        $user->fname = $_POST['fname'];
+        $user->lname = $_POST['lname'];
+        $user->phone = $_POST['phone'];
+        $user->birthday = $_POST['birthday'];
+        $user->gender = $_POST['gender'];
+        $user->save();
+        header("Location: index.php?page=accounts&action=all");
+    }
+
     public static function delete(){
 
         $record = accounts::findOne($_REQUEST['id']);
@@ -112,7 +125,7 @@ class accountsController extends http\controller
 
         if ($user == FALSE){
 
-            echo = 'user not found';
+            echo 'user not found';
 
         }else{
 

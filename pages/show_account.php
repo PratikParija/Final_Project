@@ -21,9 +21,20 @@
 
 <body>
 
-<?php  $array =  get_object_vars($data);  ?>
+<!--<h1>Email: <?php echo $data->email; ?></h1>
+<h1>First Name: <?php echo $data->fname; ?></h1>
+<h1>Last Name: <?php echo $data->lname; ?></h1>-->
 
-<form action="index.php?page=accounts&action=edit" method="POST">
+<?php
+
+    //this is how you print something  $data contains the record that was selected on the table.
+    //print_r($data);
+
+    $array =  get_object_vars($data);
+
+?>
+
+<form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="POST">
 
     <div class="container">
         <div class="form-group">
@@ -72,7 +83,7 @@
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <div class="container">
-        <button type="submit" class="btn btn-default" form="form1" value="delete">Delete</button>
+        <button type="submit" form="form1" value="delete">Delete</button>
     </div>
 </form>
 
