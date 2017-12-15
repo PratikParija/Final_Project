@@ -21,9 +21,9 @@
 
 <body>
 
-<!--<h1>Email: <?php echo $data->email; ?></h1>
+<h1>Email: <?php echo $data->email; ?></h1>
 <h1>First Name: <?php echo $data->fname; ?></h1>
-<h1>Last Name: <?php echo $data->lname; ?></h1>-->
+<h1>Last Name: <?php echo $data->lname; ?></h1>
 
 <?php
 
@@ -83,7 +83,7 @@
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <div class="container">
-        <button type="submit" form="form1" value="delete">Delete</button>
+        <button type="submit" class="btn btn-default" form="form1" value="delete">Delete</button>
     </div>
 </form>
 

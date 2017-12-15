@@ -13,7 +13,7 @@ class tasksController extends http\controller
     //each method in the controller is named an action.
     //to call the show function the url is index.php?page=task&action=show
 
-    public static function newTask()
+    /*public static function newTask()
     {
         //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
         //USE THE ABOVE TO SEE HOW TO USE Bcrypt
@@ -22,7 +22,7 @@ class tasksController extends http\controller
 
         self::getTemplate('newTask');
 
-    }
+    }*/
 
     public static function show()
     {
@@ -67,7 +67,7 @@ class tasksController extends http\controller
         $record->save();
         print_r($_POST);*/
 
-        $record = new account();
+        $record = new todo();
         $record->owneremail = $_POST['owneremail'];
         $record->ownerid = $_POST['ownerid'];
         $record->createddate = $_POST['createddate'];
@@ -76,6 +76,29 @@ class tasksController extends http\controller
         $record->isdone = $_POST['isdone'];
         $record->save();
 
+        header("Location: index.php?page=tasks&action=all");
+
+    }
+
+    public static function save(){
+
+        /*session_start();
+        $task = new todo();
+
+        $task->body = $_POST['body'];
+        $task->ownerid = $_SESSION['userID'];
+        $task->save();*/
+
+        $record = todos::findOne($_REQUEST['id']);
+
+        $record->owneremail = $_POST['owneremail'];
+        $record->ownerid = $_POST['ownerid'];
+        $record->createddate = $_POST['createddate'];
+        $record->duedate = $_POST['duedaye'];
+        $record->message = $_POST['message'];
+        $record->isdone = $_POST['isdone'];
+        $record->save();
+        
         header("Location: index.php?page=tasks&action=all");
 
     }

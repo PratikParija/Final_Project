@@ -149,6 +149,15 @@ class routes
         $route->method = 'save';
         $routes[] = $route;
 
+        //This will update the task
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'save';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'save';
+        $routes[] = $route;
+
         //This is for storing registration data
         $route = new route();
         $route->http_method = 'POST';

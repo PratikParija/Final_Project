@@ -23,7 +23,7 @@
 $array =  get_object_vars($data);
 ?>
 
-<form action="index.php?page=tasks&action=edit" method="POST">
+<form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="POST">
 
     <div class="container">
         <label><b>owneremail</b></label>

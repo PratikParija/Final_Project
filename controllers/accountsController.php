@@ -51,18 +51,18 @@ class accountsController extends http\controller
         $user = accounts::findUserbyEmail($_REQUEST['email']);
 
         if ($user == FALSE) {
-            $record = new account();
-            $record->email = $_POST['email'];
-            $record->fname = $_POST['fname'];
-            $record->lname = $_POST['lname'];
-            $record->phone = $_POST['phone'];
-            $record->birthday = $_POST['birthday'];
-            $record->gender = $_POST['gender'];
+            $user = new account();
+            $user->email = $_POST['email'];
+            $user->fname = $_POST['fname'];
+            $user->lname = $_POST['lname'];
+            $user->phone = $_POST['phone'];
+            $user->birthday = $_POST['birthday'];
+            $user->gender = $_POST['gender'];
             //this creates the password
             //this is a mistake you can fix...
             //Turn the set password function into a static method on a utility class.
-            $record->password = $user->setPassword($_POST['password']);
-            $record->save();
+            $user->password = $user->setPassword($_POST['password']);
+            $user->save();
 
             header("Location: index.php?page=tasks&action=all");
 
@@ -85,6 +85,7 @@ class accountsController extends http\controller
     //this is used to save the update form data
     public static function save() {
         $user = accounts::findOne($_REQUEST['id']);
+
         $user->email = $_POST['email'];
         $user->fname = $_POST['fname'];
         $user->lname = $_POST['lname'];
@@ -103,13 +104,6 @@ class accountsController extends http\controller
         header("Location: index.php?page=accounts&action=all"); /* Redirect browser */
 
     }
-
-    //This is to insert new account
-    /*public static function insert(){
-
-        $record = new accounts;
-
-    }*/
     
     //this is to login, here is where you find the account and allow login or deny.
     public static function login()
