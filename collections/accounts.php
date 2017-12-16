@@ -6,7 +6,7 @@ class accounts extends \database\collection
 
     //This is the function to write to find user by ID for login.
     //Don't forget to return the object see findOne in the collection class
-    public static  function findUserbyEmail($email) {
+    public static function findUserbyEmail($email) {
 
         $tableName = get_called_class();
         $sql = 'SELECT * FROM ' . $tableName . ' WHERE email = ?';
@@ -14,9 +14,9 @@ class accounts extends \database\collection
         //grab the onlu record for find one and return as an object
         $recordsSet = self::getResults($sql, $email);
 
-        if (is_null($recordsSet)){
+        if (is_null($recordsSet)) {
             return FALSE;
-        }else{
+        } else {
             return $recordsSet[0];
         }
 

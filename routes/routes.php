@@ -199,7 +199,7 @@ class routes
         $route->action = 'newTask';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
-        $route->method = 'newTask';
+        $route->method = 'create';
         $routes[] = $route;
 
         return $routes;

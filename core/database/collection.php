@@ -28,7 +28,7 @@ abstract class collection
 
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
-        
+
         $statement->execute($parameters);
         $class = static::$modelName;
 

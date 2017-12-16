@@ -64,7 +64,7 @@ class accountsController extends http\controller
             $user->password = $user->setPassword($_POST['password']);
             $user->save();
 
-            header("Location: index.php?page=tasks&action=all");
+            header("Location: index.php?page=accounts&action=all");
 
         }else{
             //echo = 'already registered';
@@ -131,7 +131,8 @@ class accountsController extends http\controller
                 $_SESSION["userID"]= $user->id;
 
                 //forward the user to show all todos page
-                print_r($_SESSION);
+                //print_r($_SESSION);
+                header("Location: index.php?page=tasks&action=newTask");
 
             }else{
 
