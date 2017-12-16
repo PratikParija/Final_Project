@@ -37,42 +37,42 @@
         <h2>New Task</h2>
 
         <div class="form-group">
-            <label><b>owneremail</b></label>
+            <label><b>Owner Email</b></label>
             <input type="text" class="form-control" placeholder="Enter owner email" name="owneremail" required>
         </div>
 
         <!-- <br> -->
 
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label><b>ownerid</b></label>
             <input type="text" class="form-control" placeholder="Enter ownerid" name="ownerid" required>
-        </div>
+        </div>-->
 
         <!-- <br> -->
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label><b>createddate</b></label>
             <input type="text" class="form-control" placeholder="Enter created date" name="createddate" required>
-        </div>
+        </div>-->
 
         <!-- <br> -->
 
         <div class="form-group">
-            <label><b>duedate</b></label>
+            <label><b>Due Date</b></label>
             <input type="text" class="form-control" placeholder="Enter due date" name="duedate" required>
         </div>
 
         <!-- <br> -->
 
         <div class="form-group">
-            <label><b>message</b></label>
+            <label><b>Message</b></label>
             <input type="text" class="form-control" placeholder="Enter message" name="message" required>
         </div>
 
         <!-- <br> -->
 
         <div class="form-group">
-            <label><b>isdone</b></label>
+            <label><b>Is Done?</b></label>
             <input type="text" class="form-control" placeholder="Enter isdone" name="isdone" required>
         </div>
 

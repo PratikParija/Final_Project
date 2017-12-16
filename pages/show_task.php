@@ -26,12 +26,12 @@ $array =  get_object_vars($data);
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="POST">
 
     <div class="container">
-        <label><b>owneremail</b></label>
+        <label><b>Owner Email</b></label>
         <input type="text" name="owneremail" value="<?php echo $array['owneremail']?>" required>
 
         <br>
 
-        <label><b>ownerid</b></label>
+        <!--<label><b>ownerid</b></label>
         <input type="text"  name="ownerid" value="<?php echo $array['ownerid']?>" required>
 
         <br>
@@ -39,19 +39,19 @@ $array =  get_object_vars($data);
         <label><b>createddate</b></label>
         <input type="text" name="createddate" value="<?php echo $array['createddate']?>" required>
 
-        <br>
+        <br>-->
 
-        <label><b>duedate</b></label>
+        <label><b>Due Date</b></label>
         <input type="text"  name="duedate" value="<?php echo $array['duedate']?>" required>
 
         <br>
 
-        <label><b>message</b></label>
+        <label><b>Message</b></label>
         <input type="text"  name="message" value="<?php echo $array['message']?>" required>
 
         <br>
 
-        <label><b>isdone</b></label>
+        <label><b>Is Done?</b></label>
         <input type="text"  name="isdone" value="<?php echo $array['isdone']?>" required>
 
         <br>

@@ -167,15 +167,6 @@ class routes
         $route->method = 'store';
         $routes[] = $route;
 
-        //This will update the tasks
-        $route = new route();
-        $route->http_method = 'POST';
-        $route->action = 'store';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'store';
-        $routes[] = $route;
-
         //This creates new account
         $route = new route();
         $route->http_method = 'GET';
@@ -200,6 +191,15 @@ class routes
         $route->page = 'tasks';
         $route->controller = 'tasksController';
         $route->method = 'create';
+        $routes[] = $route;
+
+        //This will update the tasks
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'store';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'store';
         $routes[] = $route;
 
         return $routes;

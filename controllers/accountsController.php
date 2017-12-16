@@ -116,14 +116,16 @@ class accountsController extends http\controller
         //        $record = accounts::findUser($_POST['uname']);
 
         $user = accounts::findUserbyEmail($_REQUEST['email']);
-
-        if ($user == FALSE){
+        //print_r($user);
+        if (empty($user)||$user == NULL){
 
             echo 'user not found';
 
         }else{
 
-            if ($user->checkPassword($_POST['password'])==TRUE){
+            if (password_verify($_POST['password'], $user->password)){
+
+                //$login = password_verify($_POST['password'], $user->password);
 
                 echo 'login';
 
@@ -132,7 +134,7 @@ class accountsController extends http\controller
 
                 //forward the user to show all todos page
                 //print_r($_SESSION);
-                header("Location: index.php?page=tasks&action=newTask");
+                header("Location: index.php?page=tasks&action=all");
 
             }else{
 

@@ -72,7 +72,7 @@ class tasksController extends http\controller
         $record->owneremail = $_POST['owneremail'];
         $record->ownerid = $_POST['ownerid'];
         $record->createddate = $_POST['createddate'];
-        $record->duedate = $_POST['duedaye'];
+        $record->duedate = $_POST['duedate'];
         $record->message = $_POST['message'];
         $record->isdone = $_POST['isdone'];
         $record->save();
@@ -95,7 +95,7 @@ class tasksController extends http\controller
         $record->owneremail = $_POST['owneremail'];
         $record->ownerid = $_POST['ownerid'];
         $record->createddate = $_POST['createddate'];
-        $record->duedate = $_POST['duedaye'];
+        $record->duedate = $_POST['duedate'];
         $record->message = $_POST['message'];
         $record->isdone = $_POST['isdone'];
         $record->save();
