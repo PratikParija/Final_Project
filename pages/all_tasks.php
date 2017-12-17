@@ -20,7 +20,6 @@
 <?php
 //this is how you print something
 
-var_dump($data);
 if ($data == false){
     echo '<p>you don\'t have any tasks</p>';
 }else{

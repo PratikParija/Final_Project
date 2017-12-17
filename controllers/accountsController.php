@@ -104,6 +104,14 @@ class accountsController extends http\controller
         header("Location: index.php?page=accounts&action=all"); /* Redirect browser */
 
     }
+
+    public static function logout(){
+
+        session_start();
+        unset($_SESSION['userID']);
+        header("Location: index.php"); /* Redirect browser */
+
+    }
     
     //this is to login, here is where you find the account and allow login or deny.
     public static function login()
