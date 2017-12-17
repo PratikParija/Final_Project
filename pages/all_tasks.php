@@ -33,6 +33,7 @@ if ($data == false){
 </form>-->
 
 <h1><a href="index.php?page=tasks&action=newTask">Create New Task</a></h1>
+<h1><a href="index.php">Go To Homepage</a></h1>
 
 
 <script src="js/scripts.js"></script>

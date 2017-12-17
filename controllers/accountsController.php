@@ -64,7 +64,7 @@ class accountsController extends http\controller
             $user->password = $user->setPassword($_POST['password']);
             $user->save();
 
-            header("Location: index.php?page=accounts&action=all");
+            header("Location: index.php");
 
         }else{
             //echo = 'already registered';
