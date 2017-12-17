@@ -34,8 +34,17 @@ class tasksController extends http\controller
 
     public static function all()
     {
-        $records = todos::findAll();
-        self::getTemplate('all_tasks', $records);
+        //$records = todos::findAll();
+
+        session_start();
+        $userID = $_SESSION['userID'];
+
+        $tasks = todos::findTasksbyID($userID);
+        //print_r($tasks);
+
+        //echo $userID;
+
+        self::getTemplate('all_tasks', $tasks);
 
     }
     //to call the show function the url is called with a post to: index.php?page=task&action=create
@@ -69,9 +78,13 @@ class tasksController extends http\controller
         print_r($_POST);*/
 
         $record = new todo();
+        session_start();
+        date_default_timezone_set( america/new_york );
         $record->owneremail = $_POST['owneremail'];
-        $record->ownerid = $_POST['ownerid'];
-        $record->createddate = $_POST['createddate'];
+        //$record->ownerid = $_POST['ownerid'];
+        $record->ownerid = $_SESSION['userID'];
+        //$record->createddate = $_POST['createddate'];
+        $record->createddate = date("Y-m-d");
         $record->duedate = $_POST['duedate'];
         $record->message = $_POST['message'];
         $record->isdone = $_POST['isdone'];
@@ -93,8 +106,8 @@ class tasksController extends http\controller
         $record = todos::findOne($_REQUEST['id']);
 
         $record->owneremail = $_POST['owneremail'];
-        $record->ownerid = $_POST['ownerid'];
-        $record->createddate = $_POST['createddate'];
+        //$record->ownerid = $_POST['ownerid'];
+        //$record->createddate = $_POST['createddate'];
         $record->duedate = $_POST['duedate'];
         $record->message = $_POST['message'];
         $record->isdone = $_POST['isdone'];
@@ -110,7 +123,8 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r($_POST);
+        //print_r($_POST);
+        header("Location: index.php?page=tasks&action=all");
 
     }
 

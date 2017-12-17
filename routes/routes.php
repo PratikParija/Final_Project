@@ -193,7 +193,7 @@ class routes
         $route->method = 'create';
         $routes[] = $route;
 
-        //This will update the tasks
+        //This will store new task
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'store';

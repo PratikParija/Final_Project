@@ -20,7 +20,12 @@
 <?php
 //this is how you print something
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
+var_dump($data);
+if ($data == false){
+    echo '<p>you don\'t have any tasks</p>';
+}else{
+    print utility\htmlTable::genarateTableFromMultiArray($data);
+}
 
 
 ?>
