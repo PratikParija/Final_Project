@@ -1,6 +1,9 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-<form action="index.php?page=accounts&action=login" method="POST">
+<div class="container">
+<form class="form-signin" action="index.php?page=accounts&action=login" method="POST">
+    <h2 class="form-signin-heading">Please sign in</h2>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -20,3 +23,4 @@
 </form>
 
 <h1><a href="index.php?page=accounts&action=register">Register</a></h1>
+</div>
