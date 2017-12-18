@@ -19,7 +19,7 @@
             Check me out
         </label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Sign In</button>
 </form>
 
 <h1><a href="index.php?page=accounts&action=register">Register</a></h1>
