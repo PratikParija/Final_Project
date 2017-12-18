@@ -59,7 +59,7 @@
 
         <div class="form-group">
             <label><b>Due Date</b></label>
-            <input type="text" class="form-control" placeholder="Enter due date" name="duedate" required>
+            <input type="text" class="form-control" placeholder="Enter due date (y-m-d)" name="duedate" required>
         </div>
 
         <!-- <br> -->

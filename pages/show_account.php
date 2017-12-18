@@ -72,7 +72,7 @@
             <input type="text" class="form-control" name="password" value="<?php echo $array['password']?>" required>
         </div>
 
-        <button type="edit" class="btn btn-default">Edit</button>
+        <button type="edit" class="btn btn-default">Save Edits</button>
 
     </div>
 

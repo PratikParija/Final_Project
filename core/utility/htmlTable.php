@@ -8,7 +8,8 @@ class htmlTable
     public static function genarateTableFromMultiArray($array)
     {
 
-        $tableGen = '<table border="1"cellpadding="10">';
+        $tableGen = '<table border="1"class="table">';
+        $tableGen .= '<<thead class="thead-dark">';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table
         $fieldHeadings = $array[0];
@@ -17,7 +18,7 @@ class htmlTable
         //this gets the page being viewed so that the table routes requests to the correct controller
         $referingPage = $_REQUEST['page'];
         foreach ($fieldHeadings as $heading) {
-            $tableGen .= '<th>' . $heading . '</th>';
+            $tableGen .= '<th scope="col">' . $heading . '</th>';
         }
         $tableGen .= '</tr>';
         foreach ($array as $record) {

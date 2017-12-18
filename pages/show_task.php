@@ -3,6 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
@@ -26,10 +30,10 @@ $array =  get_object_vars($data);
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="POST">
 
     <div class="container">
-        <label><b>Owner Email</b></label>
-        <input type="text" name="owneremail" value="<?php echo $array['owneremail']?>" required>
-
-        <br>
+        <div class="form-group">
+            <label><b>Owner Email</b></label>
+            <input type="text" class="form-control" name="owneremail" value="<?php echo $array['owneremail']?>" required>
+        </div>
 
         <!--<label><b>ownerid</b></label>
         <input type="text"  name="ownerid" value="<?php echo $array['ownerid']?>" required>
@@ -41,30 +45,30 @@ $array =  get_object_vars($data);
 
         <br>-->
 
-        <label><b>Due Date</b></label>
-        <input type="text"  name="duedate" value="<?php echo $array['duedate']?>" required>
+        <div class="form-group">
+            <label><b>Due Date</b></label>
+            <input type="text" class="form-control" value="<?php echo $array['duedate']?>" name="duedate" required>
+        </div>
 
-        <br>
+        <div class="form-group">
+            <label><b>Message</b></label>
+            <input type="text" class="form-control" value="<?php echo $array['message']?>" name="message" required>
+        </div>
 
-        <label><b>Message</b></label>
-        <input type="text"  name="message" value="<?php echo $array['message']?>" required>
+        <div class="form-group">
+            <label><b>Is Done?</b></label>
+            <input type="text" class="form-control" value="<?php echo $array['isdone']?>" name="isdone" required>
+        </div>
 
-        <br>
+        <button type="submit" class="btn btn-default">Save Edits</button>
 
-        <label><b>Is Done?</b></label>
-        <input type="text"  name="isdone" value="<?php echo $array['isdone']?>" required>
-
-        <br>
-
-        <button type="submit">Edit</button>
+        <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
+            <button type="submit" form="form1" value="delete" class="btn btn-default">Delete</button>
+        </form>
     </div>
 
 
 
-</form>
-
-<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
 </form>
 
 

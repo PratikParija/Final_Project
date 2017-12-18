@@ -1,62 +1,14 @@
-<!doctype html>
+<?php include 'header.php';?>
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
+<main role="main" class="container">
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <!--<link rel="stylesheet" href="css/styles.css?v=1.0">-->
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-</head>
-
-<body>
+</main><!-- /.container -->
 
 
-<h1>
-    <?php
+<?php include 'footer.php';?>
 
-    //this how to print some data;
-    echo $data['site_name'];
-
-    ?> </h1>
-
-<?php
-    session_start();
-    if (isset($_SESSION['userID'])){
-        echo '<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>';
-        echo '<h1><a href="index.php?page=accounts&action=logout">Logout</a></h1>';
-        echo '<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>';
-    }else{
-        echo '<form action="index.php?page=accounts&action=login" method="POST">
-
-            <div class="container">
-                <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="email" required>
-        
-                <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-        
-                <button type="submit">Login</button>
-            </div>
-        
-        
-        </form>';
-    }
-?>
-
-
-<h1><a href="index.php?page=accounts&action=register">Register</a></h1>
-
-<!--<h1><a href="index.php?page=tasks&action=newTask">Create New Task</a></h1>-->
-
-<script src="js/scripts.js"></script>
-</body>
-</html>
