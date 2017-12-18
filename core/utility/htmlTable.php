@@ -9,7 +9,7 @@ class htmlTable
     {
 
         $tableGen = '<table border="1"class="table">';
-        $tableGen .= '<<thead class="thead-dark">';
+        $tableGen .= '<thead class="thead-dark">';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table
         $fieldHeadings = $array[0];
