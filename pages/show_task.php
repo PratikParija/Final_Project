@@ -62,13 +62,14 @@ $array =  get_object_vars($data);
 
         <button type="submit" class="btn btn-default">Save Edits</button>
 
-        <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-            <button type="submit" form="form1" value="delete" class="btn btn-default">Delete</button>
-        </form>
+
     </div>
 
-
-
+</form>
+<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
+    <div class="container">
+        <button type="submit" form="form1" value="delete" class="btn btn-default">Delete</button>
+    </div>
 </form>
 
 
